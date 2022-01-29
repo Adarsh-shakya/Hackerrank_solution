@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sca=new Scanner(System.in);
+        int time=sca.nextInt();
+        for(int l=0;l<time;l++)
+        {
+            int s1=sca.nextInt();
+            int s2=sca.nextInt();
+            int arr1[]=new int[s1];
+            int arr2[]=new int[s2];
+            for(int i=0;i<s1;i++){
+                arr1[i]=sca.nextInt();
+            }                                //11 1 13 21 3 7
+                                             //  11 3 7 1
+            for(int i=0;i<s2;i++){
+                arr2[i]=sca.nextInt();
+            }
+            int flag=0;
+            for(int i=0;i<s2;i++){
+                for(int j=0;j<s1;j++){
+                   if(arr2[i]==arr1[j]){
+                       flag++;
+                       break;
+                   } 
+                }
+            }
+            if(flag==s2){
+            System.out.println("Yes");
+                }
+            else
+            {
+                System.out.println("No");
+            }
+        }
+    }
+}
