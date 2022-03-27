@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner sca=new Scanner(System.in);
+        int r=sca.nextInt();
+        int unit=sca.nextInt();
+        int n=sca.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sca.nextInt();
+        }
+       System.out.println(Solution.method(r,unit,n,arr)) ;
+    }
+    public static int method(int r,int unit,int n,int arr[])
+    {
+        int sum=0;
+        int count=0;
+        int res=r*unit;
+        if(n==0)
+        {
+            return -1;
+        }
+        for(int i=0; i<n;i++)
+        {
+            sum=sum+arr[i];
+            count++;
+            if(sum>=res)
+            {
+             return count;   
+            }
+        }
+        
+        
+            return 0;
+        
+    }
+}
